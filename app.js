@@ -10,8 +10,8 @@ function randomHex() {
   let hex = "#";
 
   for (let i = 0; i < 6; i++) {
-    const index = Math.floor(Math.random() * hexValues.length); // 12
-    hex += hexValues[index]; //#48C
+    const randomIndex = Math.floor(Math.random() * hexValues.length); // 12
+    hex += hexValues[randomIndex]; //#48C
   }
   return hex;
 }
@@ -25,8 +25,8 @@ function generateHex() {
 
 function generatePallete() {
   const colors = randomColor({
-    count: 6,
-    hue: "red",
+    count: 5,
+    hue: randomHex(),
   });
 
   for (let i = 0; i < colors.length; i++) {
@@ -45,7 +45,7 @@ window.onload = function () {
 
 function setRandomColor() {
   const colors = randomColor({
-    count: 6,
+    count: 5,
     hue: randomHex(),
   });
 
