@@ -88,6 +88,7 @@ nav {
 @media screen and (max-width: 600px) {
   #app2 {
     flex-direction: column;
+    overflow-x: hidden;
   }
   .pallete {
     width: 100%;
@@ -98,5 +99,58 @@ nav {
   .color-info {
     width: 20%;
     font-size: 1rem;
+  }
+}
+
+.icon-scroll {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 1em;
+  height: 3.125em;
+  transform: translateX(-50%) scale(2);
+  z-index: 99999;
+}
+
+.icon-arrows::after,
+.icon-arrows::before {
+  content: "";
+}
+.icon-arrows span,
+.icon-arrows::after,
+.icon-arrows::before {
+  display: block;
+  width: 0.315em;
+  height: 0.315em;
+  border-right: 1px solid rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  margin: 0 0 0.125em 0.315em;
+  transform: rotate(45deg);
+  animation: mouse-scroll 1s infinite;
+  animation-direction: alternate;
+}
+
+.icon-arrows::before {
+  margin-top: 0.315em;
+  animation-delay: 0.1s;
+}
+
+.icon-scroll span {
+  animation-delay: 0.2s;
+}
+
+.icon-arrows::after {
+  animation-delay: 0.3s;
+}
+
+@keyframes mouse-scroll {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
